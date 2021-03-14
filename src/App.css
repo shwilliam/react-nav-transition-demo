@@ -1,0 +1,49 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-x: hidden;
+}
+
+.page {
+  flex: 1;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.header__wrapper {
+  height: 50px;
+  border-bottom: 1px solid black;
+  z-index: 999;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.header__title {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.header__title--left {
+  position: absolute;
+  left: 50px;
+}
+
+.header__back {
+  position: absolute;
+  left: 0;
+  background: transparent;
+  border: none;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
