@@ -43,26 +43,26 @@ const Page = ({
   transitionKey,
   transition = false,
   child = false,
-  zIndex = 0,
+  index = 0,
   children,
 }: {
   transitionKey: string;
   transition?: boolean;
   child?: boolean;
-  zIndex?: number;
+  index?: number;
   children: ReactNode;
 }) => {
   return (
     <motion.div
       className="page"
       key={transitionKey}
-      initial="initial"
+      initial={index ? "initial" : "animate"}
       animate={child ? "shrinkBack" : "animate"}
       exit="exit"
       variants={transition ? pageTransition.variants : undefined}
       transition={transition ? pageTransition.transition : undefined}
       style={{
-        zIndex,
+        zIndex: index + 1,
       }}
     >
       {children}
@@ -202,7 +202,7 @@ function Router() {
                       location.pathname !== path &&
                       location.pathname.includes(path)
                     }
-                    zIndex={idx + 1}
+                    index={idx}
                     transition
                   >
                     <h2>{path}</h2>
